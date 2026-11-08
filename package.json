@@ -8,7 +8,7 @@
     ".": "./src/index.js"
   },
   "bin": {
-    "opendoor": "./src/cli.js"
+    "opendoor": "src/cli.js"
   },
   "files": [
     "src",
