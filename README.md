@@ -99,7 +99,7 @@ Throw an error with a string `code` and a `status` below 500 to return a clean e
 | `accessTokenTtl`, `refreshTokenTtl` | 1 h, 30 d | OAuth token lifetimes, in seconds |
 | `instructions` | generated | MCP server instructions for agents |
 
-**Build your own UI.** `{basePath}/api` is a JSON API covering `meta`, `grants`, `connect`, `grants/:id` (PATCH), `grants/:id/token`, `grants/:id/revoke`, `activity`, `oauth/request` and `oauth/consent`. It uses your session through `getUser`, and writes must send JSON. [AIShop](../../web/src/pages) is a full React example.
+**Build your own UI.** `{basePath}/api` is a JSON API covering `meta`, `grants`, `connect`, `grants/:id` (PATCH), `grants/:id/token`, `grants/:id/revoke`, `activity`, `oauth/request` and `oauth/consent`. It uses your session through `getUser`, and writes must send JSON. AIShop (live at https://aishop-alpha.vercel.app) uses its own React screens on top of this API.
 
 ## Security model
 
@@ -116,6 +116,6 @@ Throw an error with a string `code` and a `status` below 500 to return a clean e
 ## Examples
 
 - [examples/tasks](examples/tasks): a plain server-rendered app made agent-ready with one block of code (`node examples/tasks/server.js`).
-- [AIShop](../../): a full store with a React UI, live at https://aishop-alpha.vercel.app.
+- AIShop: a full store with a React UI built on OpenDoor, live at https://aishop-alpha.vercel.app.
 
 Requires Node 20+, PostgreSQL (or PGlite), Express 4.18+ or 5.

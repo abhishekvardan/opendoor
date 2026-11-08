@@ -115,4 +115,4 @@ Hosted assistants need a public HTTPS URL. For local testing, a tunnel (`cloudfl
 - `ctx` in `run(ctx, input)` has: `user` (`{ id, …findUser }`), `agent` (`{ id, name, kind }`), `grant` (`{ id, method }`), `scopes`, `limits`, `enforceLimit(key, amount)` and `req`.
 - Built-in error codes: `INSUFFICIENT_SCOPE` (403), `INVALID_INPUT` (400), `LIMIT_EXCEEDED` (403), `RATE_LIMITED` (429), `UNKNOWN_ACTION` (404) and `INTERNAL_ERROR` (500).
 - Tool names default to underscores (`orders_list`) because Claude and ChatGPT reject dots. The REST API and logs use dotted names.
-- Full reference: the package README. A complete example is AIShop (`server/src/agents.js`).
+- Full reference: the package README (https://github.com/abhishekvardan/opendoor). Live example: https://aishop-alpha.vercel.app.
