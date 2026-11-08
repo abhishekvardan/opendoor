@@ -1,0 +1,45 @@
+{
+  "name": "@abhishekvardan/opendoor",
+  "version": "0.1.0",
+  "description": "Make an existing website agent-ready: expose its features to Claude, ChatGPT and custom AI agents over MCP, with OAuth consent, scoped permissions, limits and an audit log.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "opendoor": "./src/cli.js"
+  },
+  "files": [
+    "src",
+    "skill",
+    "examples",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "oauth",
+    "express",
+    "claude",
+    "chatgpt"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "express": ">=4.18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.15",
+    "express": "^5.3.0"
+  }
+}
