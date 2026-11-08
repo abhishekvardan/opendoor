@@ -14,11 +14,11 @@ You keep your app, your login and your business logic. You describe what agents 
 ## Quick start (Express)
 
 ```bash
-npm install @abhishekvardan/opendoor
+npm install @abhishekvardanbotta/opendoor
 ```
 
 ```js
-import { openDoor, action, z } from "@abhishekvardan/opendoor";
+import { openDoor, action, z } from "@abhishekvardanbotta/opendoor";
 
 const door = openDoor({
   name: "Acme Store",
@@ -57,7 +57,7 @@ Users connect agents at `/opendoor`. In Claude or ChatGPT, adding `https://your-
 Check the setup:
 
 ```bash
-npx @abhishekvardan/opendoor check https://your-site.com
+npx @abhishekvardanbotta/opendoor check https://your-site.com
 ```
 
 ## Concepts

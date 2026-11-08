@@ -1,5 +1,5 @@
 {
-  "name": "@abhishekvardan/opendoor",
+  "name": "@abhishekvardanbotta/opendoor",
   "version": "0.1.0",
   "description": "Make an existing website agent-ready: expose its features to Claude, ChatGPT and custom AI agents over MCP, with OAuth consent, scoped permissions, limits and an audit log.",
   "type": "module",

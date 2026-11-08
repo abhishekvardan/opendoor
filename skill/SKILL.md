@@ -1,6 +1,6 @@
 ---
 name: opendoor
-description: Make an existing website or web app agent-ready with OpenDoor (@abhishekvardan/opendoor), so Claude, ChatGPT and custom AI agents can use its features over MCP with user consent, scoped permissions, limits and an audit log. Use when the user asks to make their site "AI-ready" or "agent-ready", expose their app to AI assistants or agents, add an MCP server to a web app, let Claude or ChatGPT operate their site, or add agent permissions or consent to an app.
+description: Make an existing website or web app agent-ready with OpenDoor (@abhishekvardanbotta/opendoor), so Claude, ChatGPT and custom AI agents can use its features over MCP with user consent, scoped permissions, limits and an audit log. Use when the user asks to make their site "AI-ready" or "agent-ready", expose their app to AI assistants or agents, add an MCP server to a web app, let Claude or ChatGPT operate their site, or add agent permissions or consent to an app.
 ---
 
 # Make a website agent-ready with OpenDoor
@@ -52,13 +52,13 @@ Rules:
 ## 3. Wire it up
 
 ```bash
-npm install @abhishekvardan/opendoor
+npm install @abhishekvardanbotta/opendoor
 ```
 
 Create one module (`src/agents.js` or similar) with all OpenDoor config, then mount it:
 
 ```js
-import { openDoor, action, z } from "@abhishekvardan/opendoor";   // use this z for schemas
+import { openDoor, action, z } from "@abhishekvardanbotta/opendoor";   // use this z for schemas
 
 export const door = openDoor({
   name: "Acme",                                           // shown on consent screens
@@ -89,14 +89,14 @@ Checks:
 
 ## 4. Verify (don't skip this; report what you ran)
 
-1. Start the app and run `npx @abhishekvardan/opendoor check http://localhost:PORT`. Every line should be ✓.
+1. Start the app and run `npx @abhishekvardanbotta/opendoor check http://localhost:PORT`. Every line should be ✓.
 2. Sign in as a test user, open `/opendoor`, choose **Connect an agent** with read-only scopes, and copy the token.
 3. Call a read action and a forbidden one:
    ```bash
    curl -s -X POST localhost:PORT/agent/v1/actions/<read.action> -H "Authorization: Bearer $T" -H "Content-Type: application/json" -d '{}'
    curl -s -X POST localhost:PORT/agent/v1/actions/<write.action> -H "Authorization: Bearer $T" -H "Content-Type: application/json" -d '{…}'   # expect 403 INSUFFICIENT_SCOPE
    ```
-4. List the tools over MCP: `npx @abhishekvardan/opendoor check http://localhost:PORT --token $T`.
+4. List the tools over MCP: `npx @abhishekvardanbotta/opendoor check http://localhost:PORT --token $T`.
 5. Check that the activity log on `/opendoor` shows both calls, including the denial.
 6. If the project has tests, add one that connects with a token, calls an action and checks the result belongs to the right user. The `@modelcontextprotocol/sdk` client with `StreamableHTTPClientTransport` works well.
 7. For any `confirm: true` action, show that a call without `confirm` fails with `INVALID_INPUT`.
